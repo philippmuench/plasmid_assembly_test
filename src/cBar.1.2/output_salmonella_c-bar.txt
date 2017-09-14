@@ -1,0 +1,5 @@
+#SeqID	Length	Prediction
+RNODE_1_length_9737_cov_4.89668	9737	Plasmid
+RNODE_2_length_2557_cov_5.20922	2557	Plasmid
+RNODE_3_length_1794_cov_5.88893	1794	Plasmid
+RNODE_4_length_1032_cov_7.17709	1032	Chromosome

@@ -1,0 +1,11 @@
+python recycle.py -g GRAPH -k MAX_K -b BAM [-l LENGTH] [-m MAX_CV] [-i ISO]
+
+### required arguments:
+    
+    -g GRAPH
+    (spades 3.50+) assembly graph FASTG file to process:
+    for spades 3.5, before_rr.fastg; for spades 3.6+, assembly_graph.fastg
+    -k MAX_K
+    integer reflecting maximum k value used by the assembler
+    -b BAM
+    BAM file resulting from aligning reads to contigs file, filtering for best matches
