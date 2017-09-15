@@ -16,6 +16,7 @@ RUN cpanm \
 RUN apt-get -qq update && \
   apt-get install -qq -y \
   wget \
+  default-jre \
   gcc \
   mono-mcs \
   nano \
