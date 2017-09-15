@@ -32,7 +32,16 @@ RUN apt-get -qq update && \
   libfreetype6-dev \
   samtools \
   libpng-dev \
+  libboost-all-dev \
+  libssl-dev \ 
+  libffi-dev \
+  build-essential \
+  python-tk \
+  python-dev \
+  libpq-dev \
   python-matplotlib \
+  python-pip \
+  r-base \
   && rm -rf /var/lib/apt/lists/*
 
 # download SRA toolkit
@@ -56,10 +65,18 @@ RUN git clone https://github.com/lh3/bwa
 WORKDIR bwa
 RUN make
 ENV PATH="/root/bwa/:${PATH}"
+WORKDIR /root
+
+# install plasmidminer
+RUN git clone https://github.com/philippmuench/plasmidminer.git
+RUN pip install numpy cython pysam termcolor && \
+  pip install https://github.com/AmazaspShumik/sklearn_bayes/archive/master.zip && \
+  pip install -r plasmidminer/requirements.txt
 
 WORKDIR /root
 COPY src scr
 COPY start.sh start.sh
 COPY compare_cBar.sh compare_cBar.sh
+COPY plot.R plot.R
 
-ENTRYPOINT ["/root/compare_cBar.sh"]
+#ENTRYPOINT ["/root/compare_cBar.sh"]
