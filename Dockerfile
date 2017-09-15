@@ -60,3 +60,4 @@ ENV PATH="/root/bwa/:${PATH}"
 WORKDIR /root
 COPY src scr
 COPY start.sh start.sh
+COPY compare_cBar.sh compare_cBar.sh
