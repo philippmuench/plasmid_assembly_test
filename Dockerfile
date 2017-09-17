@@ -73,6 +73,10 @@ RUN pip install numpy cython pysam termcolor && \
   pip install https://github.com/AmazaspShumik/sklearn_bayes/archive/master.zip && \
   pip install -r plasmidminer/requirements.txt
 
+# install deep-plasmid
+RUN git clone https://github.com/philippmuench/dna_lstm.git
+RUN pip install tensorflow keras sklearn pandas h5py
+
 WORKDIR /root
 COPY src scr
 COPY start.sh start.sh
