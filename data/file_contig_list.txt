@@ -1,1 +1,3 @@
-test_contig.fasta
+cami_600_500.fasta
+ecoli_30_500.fasta
+kleb_30_500.fasta
